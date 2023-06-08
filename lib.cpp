@@ -12,6 +12,12 @@ void init(char mat[5][15]){
         init(mat[i],15);
     }
 }
+void inserimento(char nomi[5][15], char cognomi[5][15]){
+    for(int i=0; i<5;i++){
+        inserimento(nomi[i],15);
+        inserimento(cognomi[i],15);
+    }
+}
 void inserimento (char mat[], int n) {
     char x[n*10];
     init(x,n*10);
@@ -23,12 +29,7 @@ void inserimento (char mat[], int n) {
         mat[i]=x[i];
     }
 }
-void inserimento(char nomi[5][15], char cognomi[5][15]){
-    for(int i=0; i<5;i++){
-        inserimento(nomi[i],15);
-        inserimento(cognomi[i],15);
-    }
-}
+
 
 int ricerca(char nomi[][15],char cognomi[][15],char nome[],char cognome[] ) {
     for (int i=0; i<5; i++){
@@ -38,9 +39,11 @@ int ricerca(char nomi[][15],char cognomi[][15],char nome[],char cognome[] ) {
                 break;}
             if(nomi[i][j]!=nome[i]){
                 break;}
-            if (j==15){
+        } 
+        if (j==15){
                 return i;}
         }
+    
         return -1;
 }
 
